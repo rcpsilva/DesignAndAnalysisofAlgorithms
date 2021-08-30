@@ -1,0 +1,9 @@
+﻿  BruteForce.cpp
+  DesignAndAnalysisOfAlgorithms.cpp
+C:\Users\rcpsi\source\repos\DesignAndAnalysisOfAlgorithms\BruteForce.cpp(15,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\rcpsi\source\repos\DesignAndAnalysisOfAlgorithms\DesignAndAnalysisOfAlgorithms.cpp(23): message : see reference to function template instantiation 'void selection_sort<Student>(std::vector<Student,std::allocator<Student>> &)' being compiled
+C:\Users\rcpsi\source\repos\DesignAndAnalysisOfAlgorithms\BruteForce.cpp(17,25): warning C4018: '<': signed/unsigned mismatch
+  Student.cpp
+  Util.cpp
+  Generating Code...
+  DesignAndAnalysisOfAlgorithms.vcxproj -> C:\Users\rcpsi\source\repos\DesignAndAnalysisOfAlgorithms\Debug\DesignAndAnalysisOfAlgorithms.exe
