@@ -20,7 +20,7 @@ int main()
 
     printSequence(seq);
 
-    selection_sort(seq);
+    //selection_sort(seq);
 
     //selection_sort(seq.begin(), seq.end());
 
@@ -28,7 +28,7 @@ int main()
 
     //bubble_sort(seq);
 
-    //bubble_sort(seq.begin(), seq.end(), std::greater<Student>());
+    bubble_sort(seq.begin(), seq.end(), std::greater<Student>());
 
     printSequence(seq);
 
