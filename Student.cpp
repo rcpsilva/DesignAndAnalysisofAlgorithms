@@ -28,3 +28,11 @@ public:
 	}
 };
 
+class compStudentNames {
+public:
+
+	bool operator()(Student& s1, Student& s2)
+	{
+		return (s1.name < s2.name);
+	}
+};

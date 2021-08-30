@@ -12,11 +12,11 @@ int main()
 {
     std::vector<Student> seq({});
 
-    seq.push_back(Student("A", 9));
     seq.push_back(Student("B", 6));
-    seq.push_back(Student("C", 10));
     seq.push_back(Student("D", 8));
     seq.push_back(Student("E", 7));
+    seq.push_back(Student("C", 10));
+    seq.push_back(Student("A", 9));
 
     printSequence(seq);
 
@@ -28,7 +28,9 @@ int main()
 
     //bubble_sort(seq);
 
-    bubble_sort(seq.begin(), seq.end(), std::greater<Student>());
+    //bubble_sort(seq.begin(), seq.end(), std::greater<Student>());
+
+    bubble_sort(seq.begin(), seq.end(), compStudentNames());
 
     printSequence(seq);
 

@@ -7,3 +7,4 @@ void printSequence(Iterable& seq) {
 	}
 	std::cout << std::endl;
 }
+
