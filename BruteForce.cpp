@@ -35,7 +35,6 @@ template <class It, class C> void selection_sort(It first, It last, C comparator
 
 template <class It> void selection_sort(It first, It last)
 {
-	// std::vector<T>::iterator
 	selection_sort(first, last, std::less<std::decay_t<decltype(*first)>>());
 }
 
@@ -65,6 +64,5 @@ template <class It, class C> void bubble_sort(It first, It last, C comparator)
 
 template <class It> void bubble_sort(It first, It last)
 {
-	// std::vector<T>::iterator
 	bubble_sort(first, last, std::less<std::decay_t<decltype(*first)>>());
 }
