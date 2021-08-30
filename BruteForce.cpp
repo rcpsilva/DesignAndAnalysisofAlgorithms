@@ -43,7 +43,7 @@ template <typename T>
 void bubble_sort(std::vector<T>& v) {
 	for (size_t i = 0; i < v.size() - 1; i++)
 	{
-		for (size_t j = 0; j < v.size() - 1; j++)
+		for (size_t j = 0; j < v.size() - 1 - i; j++)
 		{
 			if (v[j] > v[j + 1]) {
 				std::swap(v[j], v[j + 1]);
@@ -57,7 +57,7 @@ template <class It, class C> void bubble_sort(It first, It last, C comparator)
 	// std::vector<T>::iterator
 	for (auto it = first; it != last - 1; ++it)
 	{
-		for (auto it2 = first; it2 != last - 1; ++it2) {
+		for (auto it2 = first; it2 != (last - (it - first) - 1); ++it2) {
 			iter_swap(it2, std::min_element(it2, it2 + 2, comparator));
 		}
 	}
