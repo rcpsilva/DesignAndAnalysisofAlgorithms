@@ -1,38 +1,43 @@
 // PCC104DesignAndAnalysisofAlgorithms.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
-#include <Util.cpp>
-#include <Student.cpp>
-#include <BruteForce.cpp>
+#include <Util.h>
+#include <Sorting.h>
+#include <GraphSearch.h>
 #include <vector>
-#include <list>
-
 
 int main()
 {
-    std::vector<Student> seq({});
 
-    seq.push_back(Student("B", 6));
-    seq.push_back(Student("D", 8));
-    seq.push_back(Student("E", 7));
-    seq.push_back(Student("C", 10));
-    seq.push_back(Student("A", 9));
+    std::vector<std::vector<int>> G({
+        {1,2},
+        {3,4},
+        {5},
+        {},
+        {},
+        {6,7},
+        {8},
+        {},
+        {9},
+        {} });
 
-    printSequence(seq);
+    std::list<int> pathdfs = dfs(0, G);
 
-    //selection_sort(seq);
+    printSequence(pathdfs);
 
-    //selection_sort(seq.begin(), seq.end());
+    std::cout << "------------------------------------"  << std::endl;
 
-    //selection_sort(seq.begin(), seq.end(), std::greater<Student>());
+    std::list<int> pathbfs = bfs(0, G);
 
-    //bubble_sort(seq);
+    printSequence(pathbfs);
 
-    //bubble_sort(seq.begin(), seq.end(), std::greater<Student>());
+    std::cout << "------------------------------------" << std::endl;
 
-    bubble_sort(seq.begin(), seq.end(), compStudentNames());
+    permutations(6);
 
-    printSequence(seq);
+
+
 
 }
+
 
