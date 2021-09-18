@@ -1,14 +1,14 @@
 // PCC104DesignAndAnalysisofAlgorithms.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
-#include <Util.h>
-#include <Sorting.h>
-#include <GraphSearch.h>
+#include "Util.h"
+#include "Sorting.h"
+#include "GraphSearch.h"
 #include <vector>
+#include <list>
 
 int main()
 {
-
     std::vector<std::vector<int>> G({
         {1,2},
         {3,4},
@@ -20,24 +20,10 @@ int main()
         {},
         {9},
         {} });
-
-    std::list<int> pathdfs = dfs(0, G);
+    
+    std::list<int> pathdfs = dfs(0,G);
 
     printSequence(pathdfs);
-
-    std::cout << "------------------------------------"  << std::endl;
-
-    std::list<int> pathbfs = bfs(0, G);
-
-    printSequence(pathbfs);
-
-    std::cout << "------------------------------------" << std::endl;
-
-    permutations(6);
-
-
-
-
 }
 
 
