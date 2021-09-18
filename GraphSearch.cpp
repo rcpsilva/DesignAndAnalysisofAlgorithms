@@ -1,7 +1,6 @@
 #include <list>
 #include <vector>
 #include "Util.h"
-
 #include "GraphSearch.h" 
 
 std::vector<int> get_neighbors(int node, std::vector<std::vector<int>> G) {
