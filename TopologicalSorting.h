@@ -1,5 +1,5 @@
 #pragma once
 
-std::list<int> topologicalSorting(std::vector<std::vector<int>> G);
+std::list<int> topological_sorting(std::vector<std::vector<int>> G);
 
 

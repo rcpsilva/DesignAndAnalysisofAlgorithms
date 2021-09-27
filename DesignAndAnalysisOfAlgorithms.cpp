@@ -7,22 +7,32 @@
 #include "PermSetGenerators.h"
 #include "ConvexHull.h"
 #include "TopologicalSorting.h"
+#include "BinarySearchTree.cpp"
 #include <vector>
 #include <list>
 
 int main()
 {
-    std::vector<std::vector<int>> G({
-        {0,1,0,0,1},
-        {0,0,0,0,0},
-        {1,0,0,0,0}, 
-        {1,0,0,0,0},
-        {0,1,0,0,0}});
 
-    std::list<int> sorted_nodes = topologicalSorting(G);
+    BinarySearchTree<int> bt;
 
-    printSequence(sorted_nodes);
-    
+    std::cout << (bt.insert(9) == InsertionInfo::Inserted ? "Inserted" : "AlreadyIn") << std::endl;
+    std::cout << (bt.insert(10) == InsertionInfo::Inserted ? "Inserted" : "AlreadyIn") << std::endl;
+    std::cout << (bt.insert(8) == InsertionInfo::Inserted ? "Inserted" : "AlreadyIn") << std::endl;
+    std::cout << (bt.insert(3) == InsertionInfo::Inserted ? "Inserted" : "AlreadyIn") << std::endl;
+    std::cout << (bt.insert(2) == InsertionInfo::Inserted ? "Inserted" : "AlreadyIn") << std::endl;
+    std::cout << (bt.insert(4) == InsertionInfo::Inserted ? "Inserted" : "AlreadyIn") << std::endl;
+    std::cout << (bt.insert(2) == InsertionInfo::Inserted ? "Inserted" : "AlreadyIn") << std::endl;
+    std::cout << (bt.insert(11) == InsertionInfo::Inserted ? "Inserted" : "AlreadyIn") << std::endl;
+
+
+    bt.print();
+
+    std::cout << std::endl;
+
+    std::cout << (bt.search(7) == SearchInfo::Found ? "found" : "not found") << std::endl;
+    std::cout << (bt.search(8) == SearchInfo::Found ? "found" : "not found") << std::endl;
+
 }
 
 

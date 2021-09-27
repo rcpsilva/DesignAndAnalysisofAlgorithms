@@ -1,52 +1,46 @@
 #include <list>
 #include <vector>
-#include <algorithm>
 #include "TopologicalSorting.h"
 
-std::list<int> topologicalSorting(std::vector<std::vector<int>> G) {
+std::list<int> topological_sorting(std::vector<std::vector<int>> G) {
 
 	std::list<int> sorted_nodes({});
 	std::list<int> nodes({});
+
 	for (int i = 0; i < G.size(); i++)
 	{
 		nodes.push_back(i);
 	}
 
+	// Find source
 	while (!nodes.empty()) {
 		
-		// Find source
-		int source = -1;
+		bool is_source = true;
 
-		for (int i : nodes) {
+		for (int e : nodes)
+		{
+			is_source = true;
 
-			bool incoming = false;
-
-			for (int j : nodes) {
-				if (G[j][i] > 0) {
-					incoming = true;
+			for (int r : nodes)
+			{
+				if (G[r][e] != 0) {
+					is_source = false;
 					break;
 				}
 			}
 
-			if (!incoming) {
-				source = i;
+			if (is_source) {
+				sorted_nodes.push_back(e);
+				nodes.remove(e);
 				break;
 			}
-
 		}
 
-		if (source == -1) {
+		if (!is_source) {
 			return std::list<int>({});
 		}
 
-		// Add node to the list
-		sorted_nodes.push_back(source);
-		
-		// Remove source
-		nodes.remove(source);
-
 	}
-
 
 	return sorted_nodes;
 
