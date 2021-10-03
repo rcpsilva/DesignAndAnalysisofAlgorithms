@@ -14,24 +14,10 @@
 int main()
 {
 
-    BinarySearchTree<int> bt;
+	std::list<std::list<int>> sets = reflectedGrayCode(4);
 
-    std::cout << (bt.insert(9) == InsertionInfo::Inserted ? "Inserted" : "AlreadyIn") << std::endl;
-    std::cout << (bt.insert(10) == InsertionInfo::Inserted ? "Inserted" : "AlreadyIn") << std::endl;
-    std::cout << (bt.insert(8) == InsertionInfo::Inserted ? "Inserted" : "AlreadyIn") << std::endl;
-    std::cout << (bt.insert(3) == InsertionInfo::Inserted ? "Inserted" : "AlreadyIn") << std::endl;
-    std::cout << (bt.insert(2) == InsertionInfo::Inserted ? "Inserted" : "AlreadyIn") << std::endl;
-    std::cout << (bt.insert(4) == InsertionInfo::Inserted ? "Inserted" : "AlreadyIn") << std::endl;
-    std::cout << (bt.insert(2) == InsertionInfo::Inserted ? "Inserted" : "AlreadyIn") << std::endl;
-    std::cout << (bt.insert(11) == InsertionInfo::Inserted ? "Inserted" : "AlreadyIn") << std::endl;
+	printSequenceSequence(sets);
 
-
-    bt.print();
-
-    std::cout << std::endl;
-
-    std::cout << (bt.search(7) == SearchInfo::Found ? "found" : "not found") << std::endl;
-    std::cout << (bt.search(8) == SearchInfo::Found ? "found" : "not found") << std::endl;
 
 }
 

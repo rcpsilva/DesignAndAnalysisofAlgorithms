@@ -103,3 +103,31 @@ void subsetgen(int n) {
 	
 
 }
+
+std::list<std::list<int>> reflectedGrayCode(int n) {
+	std::list<std::list<int>> power_set;
+
+	if (n == 1) {
+		power_set.push_back({ 0 });
+		power_set.push_back({ 1 });
+	}
+	else {
+		std::list<std::list<int>> L1 = reflectedGrayCode(n - 1);
+		std::list<std::list<int>> L2 = L1;
+		std::reverse(L2.begin(), L2.end());
+
+		for (std::list<int>& str : L1) {
+			str.emplace(str.begin(), 0);
+		}
+
+		for (std::list<int>& str : L2) {
+			str.emplace(str.begin(), 1);
+		}
+
+		L2.insert(L2.begin(), L1.begin(), L1.end());
+		power_set = L2;
+	}
+
+	return power_set;
+
+}

@@ -15,7 +15,7 @@ void printSequenceSequence(Iterable& seq) {
 		for (auto e : s) {
 			std::cout << e << " ";
 		}
-		std::cout << " , ";
+		std::cout << " , " << std::endl;
 	}
 	std::cout << std::endl;
 }
