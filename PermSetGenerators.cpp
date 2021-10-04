@@ -117,11 +117,11 @@ std::list<std::list<int>> reflectedGrayCode(int n) {
 		std::reverse(L2.begin(), L2.end());
 
 		for (std::list<int>& str : L1) {
-			str.emplace(str.begin(), 0);
+			str.push_front(0);
 		}
 
 		for (std::list<int>& str : L2) {
-			str.emplace(str.begin(), 1);
+			str.push_front(1);
 		}
 
 		L2.insert(L2.begin(), L1.begin(), L1.end());
