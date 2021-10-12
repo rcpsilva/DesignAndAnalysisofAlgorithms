@@ -98,14 +98,22 @@ void subsetgen(int n) {
 				frontier.push_back(new_path);
 			}
 		}
-
 	}
-	
-
 }
 
+/*
+if n=1 make list L conteining bit strings 0 and 1 in this ordem
+else generate list L1 of bit strings of size n-1 by calling BRGC(n-1)
+	copy list L1 to list L2 in reverse order
+	add 0 in front of each bit string in list L1
+	add 1 in front of each bit string in list L2
+	append L2 to L1 to get list L
+return L
+*/
+
 std::list<std::list<int>> reflectedGrayCode(int n) {
-	std::list<std::list<int>> power_set;
+	
+	std::list<std::list<int>> power_set({});
 
 	if (n == 1) {
 		power_set.push_back({ 0 });

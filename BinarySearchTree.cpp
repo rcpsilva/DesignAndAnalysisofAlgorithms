@@ -29,6 +29,20 @@ public:
 	SearchInfo search(T v) {
 		return search(v, root);
 	}
+	
+	void preorder() {
+		preorder(root);
+
+	}
+
+	void inorder() {
+		inorder(root);
+
+	}
+
+	void postorder() {
+		postorder(root);
+	}
 
 	void print() {
 		return print(root);
@@ -36,7 +50,7 @@ public:
 	}
 
 private:
-	
+
 	std::unique_ptr<BSTNode> root;
 
 	InsertionInfo insert(T v, std::unique_ptr<BSTNode>& node) {
@@ -56,12 +70,12 @@ private:
 		if (!node) {
 			return SearchInfo::NotFound;
 		}
-		
+
 		if (v == node->value) {
 			return SearchInfo::Found;
 		}
 		else {
-			
+
 			if (v < node->value) {
 				return search(v, node->left);
 			}
@@ -70,6 +84,41 @@ private:
 			}
 		}
 
+	}
+
+	void preorder(std::unique_ptr<BSTNode>& node) {
+		if (!node) {
+			std::cout << "";
+		}
+		else {
+			preorder(node->left);
+			preorder(node->right);
+			std::cout << " " << node->value << " ";
+		}
+	}
+
+	void inorder(std::unique_ptr<BSTNode>& node) {
+
+		if (!node) {
+			std::cout << "";
+		}
+		else {
+			inorder(node->left);
+			std::cout << " " << node->value << " ";
+			inorder(node->right);
+		}
+
+	}
+
+	void postorder(std::unique_ptr<BSTNode>& node) {
+		if (!node) {
+			std::cout << "";
+		}
+		else {
+			std::cout << " " << node->value << " ";
+			postorder(node->left);
+			postorder(node->right);
+		}
 	}
 
 	void print(std::unique_ptr<BSTNode>& node) {

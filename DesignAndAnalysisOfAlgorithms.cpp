@@ -8,17 +8,29 @@
 #include "ConvexHull.h"
 #include "TopologicalSorting.h"
 #include "BinarySearchTree.cpp"
+#include "Finders.h"
 #include <vector>
 #include <list>
 
 int main()
 {
+	BinarySearchTree<int> bt;
 
-	std::list<std::list<int>> sets = reflectedGrayCode(4);
+	bt.insert(5);
+	bt.insert(3);
+	bt.insert(1);
+	bt.insert(4);
+	bt.insert(7);
+	bt.insert(10);
 
-	printSequenceSequence(sets);
+	bt.preorder();
+	std::cout << std::endl;
 
+	bt.inorder();
+	std::cout << std::endl;
 
+	bt.postorder();
+	std::cout << std::endl;
 }
 
 
