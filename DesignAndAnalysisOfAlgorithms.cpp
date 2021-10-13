@@ -18,19 +18,25 @@ int main()
 
 	bt.insert(5);
 	bt.insert(3);
+	bt.insert(7);
 	bt.insert(1);
 	bt.insert(4);
-	bt.insert(7);
+	bt.insert(6);
 	bt.insert(10);
-
-	bt.preorder();
-	std::cout << std::endl;
 
 	bt.inorder();
 	std::cout << std::endl;
 
-	bt.postorder();
+	bt.reverse();
+
+	bt.inorder();
 	std::cout << std::endl;
+
+	//bt.preorder();
+	//std::cout << std::endl;
+
+	//bt.postorder();
+	//std::cout << std::endl;
 }
 
 
