@@ -9,34 +9,30 @@
 #include "TopologicalSorting.h"
 #include "BinarySearchTree.cpp"
 #include "Finders.h"
+#include "mean.h"
+#include "minmax.h"
 #include <vector>
 #include <list>
 
 int main()
 {
-	BinarySearchTree<int> bt;
 
-	bt.insert(5);
-	bt.insert(3);
-	bt.insert(7);
-	bt.insert(1);
-	bt.insert(4);
-	bt.insert(6);
-	bt.insert(10);
+	std::vector<float> v({ 4.5, 10 , 3, -2, -8, 15 });
 
-	bt.inorder();
-	std::cout << std::endl;
+	std::cout << mean(v) << std::endl;
+	std::cout << dec_mean(v, 0, v.size()) << std::endl;
+	std::cout << div_mean(v,0,v.size()) << std::endl;
 
-	bt.reverse();
+	std::vector<float> mm = minmax(v);
+	std::cout << mm[0] << ", " << mm[1] << std::endl;
 
-	bt.inorder();
-	std::cout << std::endl;
+	std::vector<float> dec_mm = dec_minmax(v);
+	std::cout << dec_mm[0] << ", " << dec_mm[1] << std::endl;
 
-	//bt.preorder();
-	//std::cout << std::endl;
+	std::vector<float> div_mm = div_minmax(v);
+	std::cout << div_mm[0] << ", " << div_mm[1] << std::endl;
 
-	//bt.postorder();
-	//std::cout << std::endl;
+
 }
 
 
