@@ -11,27 +11,35 @@
 #include "Finders.h"
 #include "mean.h"
 #include "minmax.h"
+#include "Fibonacci.h"
 #include <vector>
 #include <list>
+#include <chrono>
 
 int main()
 {
 
-	std::vector<float> v({ 4.5, 10 , 3, -2, -8, 15 });
+	auto start = std::chrono::system_clock::now();
+	std::cout << fibonacci(45) << std::endl;
+	auto end = std::chrono::system_clock::now();
 
-	std::cout << mean(v) << std::endl;
-	std::cout << dec_mean(v, 0, v.size()) << std::endl;
-	std::cout << div_mean(v,0,v.size()) << std::endl;
+	
+	std::chrono::duration<double> seconds_as_double = end - start;
+	std::cout << "fibonacci : " << seconds_as_double.count() << " seconds" << std::endl;
 
-	std::vector<float> mm = minmax(v);
-	std::cout << mm[0] << ", " << mm[1] << std::endl;
+	start = std::chrono::system_clock::now();
+	std::cout << fibonacci_tp(45) << std::endl;
+	end = std::chrono::system_clock::now();
 
-	std::vector<float> dec_mm = dec_minmax(v);
-	std::cout << dec_mm[0] << ", " << dec_mm[1] << std::endl;
+	seconds_as_double = end - start;
+	std::cout << "fibonacci_td : " << seconds_as_double.count() << " seconds" << std::endl;
 
-	std::vector<float> div_mm = div_minmax(v);
-	std::cout << div_mm[0] << ", " << div_mm[1] << std::endl;
+	start = std::chrono::system_clock::now();
+	std::cout << fibonacci_bu(45) << std::endl;
+	end = std::chrono::system_clock::now();
 
+	seconds_as_double = end - start;
+	std::cout << "fibonacci_bu : " << seconds_as_double.count() << " seconds" << std::endl;
 
 }
 
