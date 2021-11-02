@@ -12,6 +12,7 @@
 #include "mean.h"
 #include "minmax.h"
 #include "Fibonacci.h"
+#include "SpanningTree.h"
 #include <vector>
 #include <list>
 #include <chrono>
@@ -19,27 +20,34 @@
 int main()
 {
 
-	auto start = std::chrono::system_clock::now();
-	std::cout << fibonacci(45) << std::endl;
-	auto end = std::chrono::system_clock::now();
+	std::vector<std::vector<float>> graph({ {0,3,0,0,6,5},
+											{3,0,1,0,0,4},
+											{0,1,0,6,0,4},
+											{0,0,6,0,8,5},
+											{6,0,0,8,0,2},
+											{5,4,4,5,2,0} });
 
+	printSequenceSequence(graph);
+
+	auto start = std::chrono::system_clock::now();
+	std::vector<std::vector<float>> spanning_tree = prim2(graph);
+	auto end = std::chrono::system_clock::now();
 	
 	std::chrono::duration<double> seconds_as_double = end - start;
-	std::cout << "fibonacci : " << seconds_as_double.count() << " seconds" << std::endl;
+	std::cout << "Elapsed : " << seconds_as_double.count() << " seconds" << std::endl;
 
-	start = std::chrono::system_clock::now();
-	std::cout << fibonacci_tp(45) << std::endl;
-	end = std::chrono::system_clock::now();
 
-	seconds_as_double = end - start;
-	std::cout << "fibonacci_td : " << seconds_as_double.count() << " seconds" << std::endl;
 
-	start = std::chrono::system_clock::now();
-	std::cout << fibonacci_bu(45) << std::endl;
-	end = std::chrono::system_clock::now();
+	spanning_tree = prim2(graph);
+	std::cout << "Minimal Spanning Tree" << std::endl;
 
-	seconds_as_double = end - start;
-	std::cout << "fibonacci_bu : " << seconds_as_double.count() << " seconds" << std::endl;
+	printSequenceSequence(spanning_tree);
+
+	spanning_tree = prim(graph);
+	std::cout << "Minimal Spanning Tree" << std::endl;
+
+	printSequenceSequence(spanning_tree);
+
 
 }
 
