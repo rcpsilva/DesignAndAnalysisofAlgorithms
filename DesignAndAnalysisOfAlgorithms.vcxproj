@@ -143,10 +143,34 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BruteForce.cpp" />
+    <ClCompile Include="BinarySearchTree.cpp" />
+    <ClCompile Include="ConvexHull.cpp" />
     <ClCompile Include="DesignAndAnalysisOfAlgorithms.cpp" />
+    <ClCompile Include="Fibonacci.cpp" />
+    <ClCompile Include="Finders.cpp" />
+    <ClCompile Include="GraphSearch.cpp" />
+    <ClCompile Include="mean.cpp" />
+    <ClCompile Include="minmax.cpp" />
+    <ClCompile Include="PermSetGenerators.cpp" />
+    <ClCompile Include="Sorting.cpp" />
+    <ClCompile Include="SpanningTree.cpp" />
     <ClCompile Include="Student.cpp" />
+    <ClCompile Include="TopologicalSorting.cpp" />
     <ClCompile Include="Util.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BinarySearchTree.h" />
+    <ClInclude Include="ConvexHull.h" />
+    <ClInclude Include="Fibonacci.h" />
+    <ClInclude Include="Finders.h" />
+    <ClInclude Include="GraphSearch.h" />
+    <ClInclude Include="mean.h" />
+    <ClInclude Include="minmax.h" />
+    <ClInclude Include="PermSetGenerators.h" />
+    <ClInclude Include="Sorting.h" />
+    <ClInclude Include="SpanningTree.h" />
+    <ClInclude Include="TopologicalSorting.h" />
+    <ClInclude Include="Util.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
