@@ -2,7 +2,10 @@
 #include <vector>
 #include <limits>
 #include <cfloat>
+#include <queue>
+#include "Elements.h"
 #include "SpanningTree.h"
+
 
 std::vector<std::vector<float>> prim(std::vector<std::vector<float>> graph) {
 	/* Computes a minimum spanning tree using Prim's algorithm
@@ -48,7 +51,6 @@ std::vector<std::vector<float>> prim(std::vector<std::vector<float>> graph) {
 
 }
 
-
 int min_node(std::vector<float>& vals, std::vector<bool>& nodes) {
 	float min = FLT_MAX;
 	int min_idx = 0;
@@ -63,7 +65,6 @@ int min_node(std::vector<float>& vals, std::vector<bool>& nodes) {
 
 	return  min_idx;
 }
-
 
 std::vector<std::vector<float>> prim2(std::vector<std::vector<float>> graph) {
 	/* Computes a minimum spanning tree using Prim's algorithm
@@ -101,5 +102,41 @@ std::vector<std::vector<float>> prim2(std::vector<std::vector<float>> graph) {
 	}
 
 	return tree;
+
+}
+
+std::vector<Edge> primElogV(std::vector<std::vector<Node>> graph, int n_nodes) {
+	/* Computes a minimum spanning tree using Prim's algorithm
+
+	*/
+
+	std::vector<std::vector<float>> tree(graph.size(), std::vector<float>(graph.size(), 0.0));
+	std::vector<bool> included(graph.size(), false);
+	std::priority_queue<Edge, std::vector<Edge>, GreaterEdge> edges({});
+	std::vector<Edge> selected_edges({});
+
+	edges.push(Edge(-1, 0, 0));
+
+	while (!edges.empty())
+	{
+		Edge selected = edges.top();
+		edges.pop();
+
+		if (!included[selected.id]) {
+			selected_edges.push_back(selected);
+			included[selected.id] = true;
+
+			for (Node n : graph[selected.id]) {
+				if (!included[n.id]) {
+					edges.push(Edge(selected.id, n.id, n.val));
+				}
+			}
+		}
+
+
+	}
+
+
+	return selected_edges;
 
 }

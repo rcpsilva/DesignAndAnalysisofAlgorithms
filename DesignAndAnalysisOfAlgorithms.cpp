@@ -12,15 +12,34 @@
 #include "mean.h"
 #include "minmax.h"
 #include "Fibonacci.h"
+#include "Elements.h"
 #include "SpanningTree.h"
 #include <vector>
+#include <queue>
 #include <list>
 #include <chrono>
+
 
 int main()
 {
 
-	std::vector<std::vector<float>> graph({ {0,3,0,0,6,5},
+	std::vector<std::vector<Node>> graph({
+		{Node(1,3),Node(4,5),Node(5,6)},//conected to node 0
+		{Node(0,3),Node(5,4),Node(2,1)},//conected to node 1
+		{Node(1,1),Node(5,4),Node(3,6)},//conected to node 2
+		{Node(2,6),Node(5,5),Node(4,8)},//conected to node 3
+		{Node(0,6),Node(5,2),Node(3,8)},//conected to node 4
+		{Node(0,5),Node(1,4),Node(2,4),Node(3,5),Node(4,2)},//conected to node 5
+		});
+
+
+	std::vector<Edge> tree = primElogV(graph, 5);
+
+	for (Edge e : tree) {
+		std::cout << "(" << e.parent << "\t" << e.id << "\t cost: " << e.val << ")" << std::endl;
+	}
+
+	/*std::vector<std::vector<float>> graph({{0,3,0,0,6,5},
 											{3,0,1,0,0,4},
 											{0,1,0,6,0,4},
 											{0,0,6,0,8,5},
@@ -46,7 +65,7 @@ int main()
 	spanning_tree = prim(graph);
 	std::cout << "Minimal Spanning Tree" << std::endl;
 
-	printSequenceSequence(spanning_tree);
+	printSequenceSequence(spanning_tree);*/
 
 
 }

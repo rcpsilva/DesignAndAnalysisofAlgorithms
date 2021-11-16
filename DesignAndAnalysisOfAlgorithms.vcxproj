@@ -118,7 +118,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
       <AdditionalIncludeDirectories>C:\Users\rcpsi\source\repos\DesignAndAnalysisOfAlgorithms\DesignAndAnalysisofAlgorithms</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -146,6 +146,7 @@
     <ClCompile Include="BinarySearchTree.cpp" />
     <ClCompile Include="ConvexHull.cpp" />
     <ClCompile Include="DesignAndAnalysisOfAlgorithms.cpp" />
+    <ClCompile Include="Elements.cpp" />
     <ClCompile Include="Fibonacci.cpp" />
     <ClCompile Include="Finders.cpp" />
     <ClCompile Include="GraphSearch.cpp" />
@@ -161,6 +162,7 @@
   <ItemGroup>
     <ClInclude Include="BinarySearchTree.h" />
     <ClInclude Include="ConvexHull.h" />
+    <ClInclude Include="Elements.h" />
     <ClInclude Include="Fibonacci.h" />
     <ClInclude Include="Finders.h" />
     <ClInclude Include="GraphSearch.h" />
