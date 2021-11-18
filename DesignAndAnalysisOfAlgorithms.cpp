@@ -33,7 +33,7 @@ int main()
 		});
 
 
-	std::vector<Edge> tree = primElogV(graph, 5);
+	std::vector<Edge> tree = primElogE(graph, 5);
 
 	for (Edge e : tree) {
 		std::cout << "(" << e.parent << "\t" << e.id << "\t cost: " << e.val << ")" << std::endl;

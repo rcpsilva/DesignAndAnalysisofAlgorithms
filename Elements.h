@@ -2,37 +2,20 @@
 
 class Node {
 public:
-    int id;
-    float val;
-    Node(int s, float v);
+	int id;
+	float val;
+	Node(int i, float v);
 };
-
 
 class Edge {
 public:
-    int parent;
-    int id;
-    float val;
-    Edge(int v, int u, float val);
+	int from;
+	int to;
+	float val;
+	Edge(int f, int t, float v);
 };
 
 class GreaterEdge {
 public:
-    bool operator()(Edge e1, Edge e2);
+	bool operator()(Edge e1, Edge e2);
 };
-
-class LessEdge {
-public:
-    bool operator()(Edge e1, Edge e2);
-};
-
-class GreaterNode {
-public:
-    bool operator()(Node e1, Node e2);
-};
-
-class LessNode {
-public:
-    bool operator()(Node e1, Node e2);
-};
-

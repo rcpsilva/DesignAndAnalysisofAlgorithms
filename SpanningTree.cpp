@@ -105,38 +105,35 @@ std::vector<std::vector<float>> prim2(std::vector<std::vector<float>> graph) {
 
 }
 
-std::vector<Edge> primElogV(std::vector<std::vector<Node>> graph, int n_nodes) {
-	/* Computes a minimum spanning tree using Prim's algorithm
+std::vector<Edge> primElogE(std::vector<std::vector<Node>> graph) {
 
-	*/
-
-	std::vector<std::vector<float>> tree(graph.size(), std::vector<float>(graph.size(), 0.0));
 	std::vector<bool> included(graph.size(), false);
 	std::priority_queue<Edge, std::vector<Edge>, GreaterEdge> edges({});
-	std::vector<Edge> selected_edges({});
+	std::vector<Edge> tree;
 
 	edges.push(Edge(-1, 0, 0));
 
-	while (!edges.empty())
-	{
+	while (!edges.empty()) {
+
 		Edge selected = edges.top();
 		edges.pop();
 
-		if (!included[selected.id]) {
-			selected_edges.push_back(selected);
-			included[selected.id] = true;
+		if (!included[selected.to]) {
+			tree.push_back(selected);
+			included[selected.to] = true;
 
-			for (Node n : graph[selected.id]) {
+			for (Node n : graph[selected.to]) {
 				if (!included[n.id]) {
-					edges.push(Edge(selected.id, n.id, n.val));
+					edges.push(Edge(selected.to, n.id, n.val)); //log E
 				}
 			}
 		}
 
-
 	}
 
+	// E log E
 
-	return selected_edges;
+
+	return tree;
 
 }
