@@ -144,6 +144,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BinarySearchTree.cpp" />
+    <ClCompile Include="CoinRow.cpp" />
     <ClCompile Include="ConvexHull.cpp" />
     <ClCompile Include="DesignAndAnalysisOfAlgorithms.cpp" />
     <ClCompile Include="Elements.cpp" />
@@ -161,6 +162,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BinarySearchTree.h" />
+    <ClInclude Include="CoinRow.h" />
     <ClInclude Include="ConvexHull.h" />
     <ClInclude Include="Elements.h" />
     <ClInclude Include="Fibonacci.h" />
