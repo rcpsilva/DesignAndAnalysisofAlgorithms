@@ -63,6 +63,9 @@
     <ClCompile Include="CoinRow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Knapsack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BinarySearchTree.h">
@@ -105,6 +108,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CoinRow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Knapsack.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

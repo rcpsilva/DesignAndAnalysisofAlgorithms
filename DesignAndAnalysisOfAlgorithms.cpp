@@ -15,6 +15,7 @@
 #include "Elements.h"
 #include "SpanningTree.h"
 #include "CoinRow.h"
+#include "Knapsack.h"
 #include <vector>
 #include <queue>
 #include <list>
@@ -27,6 +28,12 @@ int main()
 	std::cout << coin_row_dynamic(coins) << std::endl;
 
 	std::cout << coin_row_recursive(coins) << std::endl;
+
+	std::vector<int> weights({2,1,3,2});
+	std::vector<int> values({12,10,20,15});
+	int capacity = 5;
+
+	std::cout << mf_knapsack(values, weights, capacity) << std::endl;
 
 	/*std::vector<std::vector<Node>> graph({
 		{Node(1,3),Node(4,5),Node(5,6)},//conected to node 0

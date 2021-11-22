@@ -151,6 +151,7 @@
     <ClCompile Include="Fibonacci.cpp" />
     <ClCompile Include="Finders.cpp" />
     <ClCompile Include="GraphSearch.cpp" />
+    <ClCompile Include="Knapsack.cpp" />
     <ClCompile Include="mean.cpp" />
     <ClCompile Include="minmax.cpp" />
     <ClCompile Include="PermSetGenerators.cpp" />
@@ -168,6 +169,7 @@
     <ClInclude Include="Fibonacci.h" />
     <ClInclude Include="Finders.h" />
     <ClInclude Include="GraphSearch.h" />
+    <ClInclude Include="Knapsack.h" />
     <ClInclude Include="mean.h" />
     <ClInclude Include="minmax.h" />
     <ClInclude Include="PermSetGenerators.h" />
