@@ -1,4 +1,4 @@
 #pragma once
 
-float coin_row_dynamic(const std::vector<float>& coins);
-float coin_row_recursive(const std::vector<float>& coins);
+int coin_row_dynamic(std::vector<int>&);
+int coin_row_recursive(std::vector<int>&);

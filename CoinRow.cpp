@@ -2,35 +2,34 @@
 #include <algorithm>
 #include "CoinRow.h"
 
-float coin_row_dynamic(const std::vector<float>& coins) {
+int coin_row_dynamic(std::vector<int>& coins) {
 
-	std::vector<float> f(coins.size(), 0);
-	f[1] = coins[1];
+	std::vector<int> F(coins.size(), -1);
+	F[0] = 0;
+	F[1] = coins[1];
 
-	for (size_t i = 2; i < f.size(); i++)
+	for (int i = 2; i < F.size(); i++)
 	{
-		f[i] = std::max(coins[i] + f[i-2],f[i-1]);
+		F[i] = std::max(F[i - 1], coins[i] + F[i - 2]);
 	}
 
-
-	return f.back();
+	return F.back();
 }
 
+int coin_row_recursive(std::vector<int>& coins, int n) {
 
-float coin_row_recursive(const std::vector<float>& coins, int i) {
-
-	if (i == 0) {
+	if (n == 0) {
 		return 0;
-	}
-	else if (i == 1){
+	}else if(n == 1) {
 		return coins[1];
 	}
 	else {
-		return std::max(coins[i] + coin_row_recursive(coins, i - 2),
-			coin_row_recursive(coins, i - 1));
+		return std::max(coin_row_recursive(coins, n - 1), coins[n] + coin_row_recursive(coins, n - 2));
 	}
+
 }
 
-float coin_row_recursive(const std::vector<float>& coins) {
+int coin_row_recursive(std::vector<int>& coins) {
 	return coin_row_recursive(coins, coins.size()-1);
 }
+
