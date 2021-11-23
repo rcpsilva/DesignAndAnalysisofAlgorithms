@@ -158,6 +158,7 @@
     <ClCompile Include="Sorting.cpp" />
     <ClCompile Include="SpanningTree.cpp" />
     <ClCompile Include="Student.cpp" />
+    <ClCompile Include="Backtracking.cpp" />
     <ClCompile Include="TopologicalSorting.cpp" />
     <ClCompile Include="Util.cpp" />
   </ItemGroup>
@@ -175,6 +176,7 @@
     <ClInclude Include="PermSetGenerators.h" />
     <ClInclude Include="Sorting.h" />
     <ClInclude Include="SpanningTree.h" />
+    <ClInclude Include="Backtracking.h" />
     <ClInclude Include="TopologicalSorting.h" />
     <ClInclude Include="Util.h" />
   </ItemGroup>
