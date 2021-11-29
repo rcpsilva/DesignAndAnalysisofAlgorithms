@@ -44,7 +44,9 @@ bool solve_nqueen(std::vector<int>& queens, int n) {
 		{
 			if (is_possible_nqueen(queens, i)) {
 				queens.push_back(i);
-				solve_nqueen(queens, n);
+				if (solve_nqueen(queens, n)) {
+					return true;
+				}
 				queens.pop_back();
 			}
 		}
