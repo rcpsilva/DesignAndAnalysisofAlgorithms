@@ -18,6 +18,7 @@
 #include "Knapsack.h"
 #include "Backtracking.h"
 #include "BranchAndBound.h"
+#include "ChangeMaking.h"
 #include <vector>
 #include <queue>
 #include <list>
@@ -27,16 +28,9 @@
 int main()
 {
 
-	std::vector<std::vector<int>> graph(
-		{ {0, 3, 1, 5, 8},
-		{3, 0, 6, 7, 9},
-		{1, 6, 0, 4, 2},
-		{5, 7, 4, 0, 3},
-		{8, 9, 2, 3, 0},
-		 }
-	);
+	std::vector<int> coins({ 1,3,4});
 
-	solve_tsp(graph);
+	std::cout << get_coins(11, coins) << std::endl;
 
 
 

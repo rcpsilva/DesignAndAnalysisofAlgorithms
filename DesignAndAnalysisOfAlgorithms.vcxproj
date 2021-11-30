@@ -145,6 +145,7 @@
   <ItemGroup>
     <ClCompile Include="BinarySearchTree.cpp" />
     <ClCompile Include="BranchAndBound.cpp" />
+    <ClCompile Include="ChangeMaking.cpp" />
     <ClCompile Include="CoinRow.cpp" />
     <ClCompile Include="ConvexHull.cpp" />
     <ClCompile Include="DesignAndAnalysisOfAlgorithms.cpp" />
@@ -166,6 +167,7 @@
   <ItemGroup>
     <ClInclude Include="BinarySearchTree.h" />
     <ClInclude Include="BranchAndBound.h" />
+    <ClInclude Include="ChangeMaking.h" />
     <ClInclude Include="CoinRow.h" />
     <ClInclude Include="ConvexHull.h" />
     <ClInclude Include="Elements.h" />
