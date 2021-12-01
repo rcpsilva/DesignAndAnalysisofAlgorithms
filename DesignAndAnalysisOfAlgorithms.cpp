@@ -27,13 +27,13 @@
 
 int main()
 {
+	std::vector<int> coins({1,3,4});
 
-	std::vector<int> coins({ 1,3,4});
+	int val = 15;
 
-	std::cout << get_coins(11, coins) << std::endl;
+	std::cout << get_coins_recursive(val, coins) << std::endl;
 
-
-
+	std::cout << get_coins(val, coins) << std::endl;
 }
 
 
