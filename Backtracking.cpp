@@ -6,6 +6,51 @@
 #include "Util.h"
 #include "Backtracking.h"
 
+bool is_possible_hamilton(int node, std::vector<int>& path, std::vector<std::vector<int>>& graph) {
+	if (path.size() == 0) {
+		return true;
+	}
+	else {
+		for (size_t i = 0; i < path.size(); i++)
+		{
+			if (node == path[i]) {
+				return false;
+			}
+		}
+
+		if (graph[path.back()][node] == 0) {
+			return false;
+		}
+
+		if (path.size() == graph.size() - 1 && graph[node][path.front()] == 0) {
+			return false;
+		}
+	}
+
+	return true;
+}
+
+void solve_hamilton(std::vector<std::vector<int>>& graph, std::vector<int>& path) {
+
+	if (path.size() == graph.size()) {
+		printSequence(path);
+	}
+	else {
+		for (int i = 0; i < graph.size(); i ++)
+		{
+			if (is_possible_hamilton(i, path, graph)) {
+				path.push_back(i);
+				solve_hamilton(graph, path);
+				path.pop_back();
+			}
+		}
+	}
+}
+
+void solve_hamilton(std::vector<std::vector<int>>& graph) {
+	std::vector<int> path({0});
+	solve_hamilton(graph, path);
+}
 
 bool is_possible_nqueen(std::vector<int>& queens, int col) {
 
