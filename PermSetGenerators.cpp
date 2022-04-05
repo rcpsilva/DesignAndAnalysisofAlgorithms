@@ -1,9 +1,8 @@
 #include <vector>
-#include <list>
 #include <algorithm>
+#include <list>
 #include "Util.h"
 #include "PermSetGenerators.h"
-
 
 void permgen(int n) {
 
@@ -39,6 +38,36 @@ void permgen(int n) {
 
 	}
 	
+}
+
+
+void permgen2(std::vector<int>& vals, int l, int r) {
+
+	if (l == r) {
+		printSequence(vals);
+	}
+	else {
+		for (int i = l; i <= r; i++)
+		{
+			std::swap(vals[l], vals[i]);
+
+			permgen2(vals, l + 1, r);
+
+			std::swap(vals[l], vals[i]);
+		}
+	}
+}
+
+void permgen2(int n) {
+
+	std::vector<int> vals({});
+
+	for (int i = 0; i < n; i++)
+	{
+		vals.push_back(i);
+	}
+
+	permgen2(vals, 0, n - 1);
 }
 
 void binsetgen(int n) {
