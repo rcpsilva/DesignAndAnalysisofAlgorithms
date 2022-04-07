@@ -11,7 +11,8 @@
 
 int main()
 {
-	permgen2(5);
+	permgen(4);
+	//binsetgen(4);
 
 }
 

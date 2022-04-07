@@ -7,6 +7,42 @@
 void permgen(int n) {
 
 	std::list<int> start({});
+	std::list<std::list<int>> F({ start });
+
+	while (!F.empty()) {
+
+		std::list<int> path(F.back());
+		F.pop_back();
+
+		if (path.size() == n) {
+			printSequence(path);
+		}
+		else {
+			std::vector<int> todo({});
+
+			for (int i = 0; i < n; i++) {
+				bool contains = (std::find(path.begin(), path.end(), i) != path.end());
+
+				if (!contains) {
+					todo.push_back(i);
+				}
+			}
+
+			for (auto e : todo) {
+				std::list<int> new_path(path);
+				new_path.push_back(e);
+				F.push_back(new_path);
+			}
+		} 
+
+
+	}
+	
+}
+
+void binsetgen(int n) {
+
+	std::list<int> start({});
 	std::list<std::list<int>> frontier({ start });
 
 	while (!frontier.empty()) {
@@ -18,16 +54,7 @@ void permgen(int n) {
 			printSequence(path);
 		}
 		else {
-			std::vector<int> todo({});
-
-			for (int i = n-1; i >= 0; i--)
-			{
-				bool contains = (std::find(path.begin(), path.end(), i) != path.end());
-				if (!contains) {
-					todo.push_back(i);
-				}
-
-			}
+			std::vector<int> todo({ 1,0 });
 
 			for (auto e : todo) {
 				std::list<int> new_path(path);
@@ -37,7 +64,7 @@ void permgen(int n) {
 		}
 
 	}
-	
+
 }
 
 
@@ -70,33 +97,6 @@ void permgen2(int n) {
 	permgen2(vals, 0, n - 1);
 }
 
-void binsetgen(int n) {
-
-	std::list<int> start({});
-	std::list<std::list<int>> frontier({ start });
-
-	while (!frontier.empty()) {
-
-		std::list<int> path(frontier.back());
-		frontier.pop_back();
-
-		if (path.size() == n) {
-			printSequence(path);
-		}
-		else {
-			std::vector<int> todo({1,0});
-
-			for (auto e : todo) {
-				std::list<int> new_path(path);
-				new_path.push_back(e);
-				frontier.push_back(new_path);
-			}
-		}
-
-	}
-
-
-}
 
 void subsetgen(int n) {
 
