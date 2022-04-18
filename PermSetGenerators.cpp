@@ -15,6 +15,7 @@ void permgen(int n) {
 		F.pop_back();
 
 		if (path.size() == n) {
+
 			printSequence(path);
 		}
 		else {

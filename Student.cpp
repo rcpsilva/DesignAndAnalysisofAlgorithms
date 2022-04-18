@@ -17,22 +17,16 @@ public:
 		return os;
 	}
 
-	bool operator < (const Student& st) const
-	{
+	bool operator <(const Student& st) const {
 		return (grade < st.grade);
 	}
 
-	bool operator >(const Student& st) const
-	{
-		return (grade > st.grade);
-	}
 };
 
 class compStudentNames {
 public:
 
-	bool operator()(Student& s1, Student& s2)
-	{
+	bool operator()(Student& s1, Student& s2) {
 		return (s1.name < s2.name);
 	}
 };
