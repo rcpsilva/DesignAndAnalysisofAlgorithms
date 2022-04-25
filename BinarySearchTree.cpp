@@ -30,23 +30,7 @@ public:
 		return search(v, root);
 	}
 	
-	void preorder() {
-		preorder(root);
-
-	}
-
-	void inorder() {
-		inorder(root);
-	}
-
-	void postorder() {
-		postorder(root);
-	}
-
-	void reverse() {
-		reverse(root);
-	}
-
+	
 	void print() {
 		return print(root);
 
@@ -89,50 +73,7 @@ private:
 
 	}
 
-	void preorder(std::unique_ptr<BSTNode>& node) {
-		if (!node) {
-			return;
-		}
-		else {
-			std::cout << " " << node->value << " ";
-			preorder(node->left);
-			preorder(node->right);
-		}
-	}
-
-	void inorder(std::unique_ptr<BSTNode>& node) {
-		if (!node) {
-			return;
-		}
-		else {
-			inorder(node->left);
-			std::cout << " " << node->value << " ";
-			inorder(node->right);
-		}
-	}
-
-	void postorder(std::unique_ptr<BSTNode>& node) {
-		if (!node) {
-			return;
-		}
-		else {
-			postorder(node->left);
-			postorder(node->right);
-			std::cout << " " << node->value << " ";
-		}
-	}
-
-	void reverse(std::unique_ptr<BSTNode>& node) {
-		if (!node) {
-			return;
-		}
-		else {
-			std::swap(node->left, node->right);
-			reverse(node->left);
-			reverse(node->right);
-		}
-	}
-
+	
 	void print(std::unique_ptr<BSTNode>& node) {
 		if (!node) {
 			return;
