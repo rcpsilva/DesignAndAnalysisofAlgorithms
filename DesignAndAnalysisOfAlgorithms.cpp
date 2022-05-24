@@ -9,20 +9,22 @@
 #include "PermSetGenerators.h"
 #include "Sorting.h"
 #include "Student.cpp"
+#include "BinarySearchTree.cpp"
+#include "FakeCoin.h"
+#include "SearchMatrix.h"
+#include "mean.h"
 
 
 int main()
 {
-	//std::vector<Student> v({Student("C",1),Student("B",2),Student("A",3) });
+	
+	std::vector<std::vector<float>> 
+		M({ {1,17,1,1},
+			{1,1,1,1}, 
+			{1,17,1,1}, 
+			{1,1,1,17}, });
 
-	//selection_sort(v.begin(),v.end(),compStudentNames());
-
-	std::list<float> v({ 3,2,4,9,10,7,5,8 });
-
-	bubble_sort(v.begin(),v.end());
-
-	printSequence(v);
-
+	std::cout << dim_mean2(M) << std::endl;
 }
 
 

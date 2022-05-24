@@ -75,6 +75,12 @@
     <ClCompile Include="ChangeMaking.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FakeCoin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SearchMatrix.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BinarySearchTree.h">
@@ -129,6 +135,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ChangeMaking.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FakeCoin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SearchMatrix.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
