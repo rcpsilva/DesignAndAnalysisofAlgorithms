@@ -5,26 +5,21 @@
 #include <queue>
 #include <list>
 #include <chrono>
-#include "Util.h"
-#include "PermSetGenerators.h"
-#include "Sorting.h"
-#include "Student.cpp"
-#include "BinarySearchTree.cpp"
-#include "FakeCoin.h"
-#include "SearchMatrix.h"
-#include "mean.h"
+#include <iostream>
+#include <cstdio>
+#include "Greedy.h"
 
+int main() {
 
-int main()
-{
-	
-	std::vector<std::vector<float>> 
-		M({ {1,17,1,1},
-			{1,1,1,1}, 
-			{1,17,1,1}, 
-			{1,1,1,17}, });
+	std::vector<std::vector<int>> G =
+		{{0,3,7,0,0}, 
+		 {3,0,2,4,0}, 
+		 {7,2,0,5,4}, 
+		 {0,4,5,0,6},
+		 {0,0,4,6,0}};
 
-	std::cout << dim_mean2(M) << std::endl;
+	dijkistra(G, 0);
+
 }
 
 

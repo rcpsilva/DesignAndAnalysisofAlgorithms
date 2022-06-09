@@ -108,8 +108,6 @@ void solve_nqueen(int n) {
 
 }
 
-
-
 bool is_possible_sudoku(std::vector<std::vector<int>>& grid, int x, int y, int n) {
 
 	for (int j = 0; j < grid.size(); j++)
@@ -176,3 +174,11 @@ bool solve_sudoku(std::vector<std::vector<int>>& grid) {
 	return solve_sudoku(grid, 0, 0);
 }
 
+
+void nqueenbk(std::vector<int>& s, int n) {
+
+}
+
+void nqueenbk(int n) {
+
+}

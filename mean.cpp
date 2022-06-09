@@ -117,3 +117,59 @@ float dim_mean2(std::vector<std::vector<float>>& M) {
 
 	return dim_mean2(M, 0, 0, 0);
 }
+
+
+float divMean(std::vector<std::vector<float>>& M, int bl, int el, int bc, int ec) {
+
+	if ((ec - bc == 1) && (el - bl == 1)) {
+		return M[bl][bc];
+	}
+	else {
+		int cl = std::ceil((bl + el) / 2);
+		int cc = std::ceil((bc + ec) / 2);
+
+
+		float sum = divMean(M, bl, cl, bc, cc) * (cl - bl) * (cc - bc);
+		sum += divMean(M, bl, cl, cc, ec) * (cl - bl) * (ec - cc);
+		sum += divMean(M, cl, el, bc, cc) * (el - cl) * (cc - bc);
+		sum += divMean(M, cl, el, cc, ec) * (el - cl) * (ec - cc);
+
+		return sum / ((el - bl) * (ec - bc));
+
+
+	}
+
+}
+
+float basicaoMean(std::vector<std::vector<float>>& M) {
+
+	float mean = 0;
+
+	for (auto l : M) {
+		for (auto e : l) {
+			mean += e / (M[0].size() * M.size());
+		}
+	}
+
+	return mean;
+
+}
+
+float dimMean(std::vector<std::vector<float>>& M, int i, int j, float res) {
+
+	if (i == M.size()-1 && j == M[0].size()-1) {
+		return (M[i][j] + res) / (M[0].size()* M.size());
+	}
+	else {
+		if (j < M[0].size() - 1) {
+			return dimMean(M, i, j + 1, res + M[i][j]);
+		}
+		else if (i < M.size() - 1) {
+			return dimMean(M, i + 1, 0, res + M[i][j]);
+		}
+	}
+}
+
+float dimMean(std::vector<std::vector<float>>& M) {
+	return dimMean(M, 0, 0, 0);
+}

@@ -153,6 +153,7 @@
     <ClCompile Include="Fibonacci.cpp" />
     <ClCompile Include="Finders.cpp" />
     <ClCompile Include="GraphSearch.cpp" />
+    <ClCompile Include="Greedy.cpp" />
     <ClCompile Include="Knapsack.cpp" />
     <ClCompile Include="mean.cpp" />
     <ClCompile Include="minmax.cpp" />
@@ -160,6 +161,7 @@
     <ClCompile Include="Sorting.cpp" />
     <ClCompile Include="FakeCoin.cpp" />
     <ClCompile Include="SearchMatrix.cpp" />
+    <ClCompile Include="Source.cpp" />
     <ClCompile Include="SpanningTree.cpp" />
     <ClCompile Include="Student.cpp" />
     <ClCompile Include="Backtracking.cpp" />
@@ -177,6 +179,8 @@
     <ClInclude Include="Finders.h" />
     <ClInclude Include="GraphSearch.h" />
     <ClInclude Include="FakeCoin.h" />
+    <ClInclude Include="Greedy.h" />
+    <ClInclude Include="Header.h" />
     <ClInclude Include="Knapsack.h" />
     <ClInclude Include="mean.h" />
     <ClInclude Include="minmax.h" />
