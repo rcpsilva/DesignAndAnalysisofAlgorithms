@@ -29,26 +29,26 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -153,11 +153,15 @@
     <ClCompile Include="Fibonacci.cpp" />
     <ClCompile Include="Finders.cpp" />
     <ClCompile Include="GraphSearch.cpp" />
+    <ClCompile Include="Greedy.cpp" />
     <ClCompile Include="Knapsack.cpp" />
     <ClCompile Include="mean.cpp" />
     <ClCompile Include="minmax.cpp" />
     <ClCompile Include="PermSetGenerators.cpp" />
     <ClCompile Include="Sorting.cpp" />
+    <ClCompile Include="FakeCoin.cpp" />
+    <ClCompile Include="SearchMatrix.cpp" />
+    <ClCompile Include="Source.cpp" />
     <ClCompile Include="SpanningTree.cpp" />
     <ClCompile Include="Student.cpp" />
     <ClCompile Include="Backtracking.cpp" />
@@ -174,10 +178,14 @@
     <ClInclude Include="Fibonacci.h" />
     <ClInclude Include="Finders.h" />
     <ClInclude Include="GraphSearch.h" />
+    <ClInclude Include="FakeCoin.h" />
+    <ClInclude Include="Greedy.h" />
+    <ClInclude Include="Header.h" />
     <ClInclude Include="Knapsack.h" />
     <ClInclude Include="mean.h" />
     <ClInclude Include="minmax.h" />
     <ClInclude Include="PermSetGenerators.h" />
+    <ClInclude Include="SearchMatrix.h" />
     <ClInclude Include="Sorting.h" />
     <ClInclude Include="SpanningTree.h" />
     <ClInclude Include="Backtracking.h" />

@@ -5,23 +5,20 @@
 #include <queue>
 #include <list>
 #include <chrono>
-#include "Util.h"
-#include "PermSetGenerators.h"
-#include "Sorting.h"
-#include "Student.cpp"
+#include <iostream>
+#include <cstdio>
+#include "Greedy.h"
 
+int main() {
 
-int main()
-{
-	//std::vector<Student> v({Student("C",1),Student("B",2),Student("A",3) });
+	std::vector<std::vector<int>> G =
+		{{0,3,7,0,0}, 
+		 {3,0,2,4,0}, 
+		 {7,2,0,5,4}, 
+		 {0,4,5,0,6},
+		 {0,0,4,6,0}};
 
-	//selection_sort(v.begin(),v.end(),compStudentNames());
-
-	std::list<float> v({ 3,2,4,9,10,7,5,8 });
-
-	bubble_sort(v.begin(),v.end());
-
-	printSequence(v);
+	dijkistra(G, 0);
 
 }
 
