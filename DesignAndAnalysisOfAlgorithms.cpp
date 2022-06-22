@@ -8,18 +8,28 @@
 #include <iostream>
 #include <cstdio>
 #include "Greedy.h"
+#include "Backtracking.h"
+#include "Util.h"
 
 int main() {
 
-	std::vector<std::vector<int>> G =
-		{{0,3,7,0,0}, 
-		 {3,0,2,4,0}, 
-		 {7,2,0,5,4}, 
-		 {0,4,5,0,6},
-		 {0,0,4,6,0}};
+	std::vector<std::vector<int>> grid =
+	{ {5,3,0,0,7,0,0,0,0},
+	{6,0,0,1,9,5,0,0,0},
+	{0,9,8,0,0,0,0,6,0},
+	{8,0,0,0,6,0,0,0,3},
+	{4,0,0,8,0,3,0,0,1},
+	{7,0,0,0,2,0,0,0,6},
+	{0,6,0,0,0,0,2,8,0},
+	{0,0,0,4,1,9,0,0,5},
+	{0,0,0,0,8,0,0,7,9} };
 
-	dijkistra(G, 0);
+	//solve_sudoku(grid);
 
+	//printSequenceSequence(grid);
+	sudoku(grid);
+
+	printSequenceSequence(grid);
 }
 
 
